@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — sistema "Organic", variante 1a "Sentiero".
+  Fonte: README.md del progetto (design handoff RAO escursioni).
+  Ogni --color-*, --radius-*, --shadow-* e --font-* qui sotto genera
+  automaticamente le utility Tailwind corrispondenti (es. bg-page,
+  text-ink-soft, rounded-card, shadow-raised, font-display...).
+*/
+@theme {
+  /* Colore */
+  --color-page: #f5ead8;
+  --color-surface: #ebddc5;
+  --color-surface-hover: #eee7db;
+  --color-surface-soft: #f9f4ed;
+
+  --color-ink: #201e1d;
+  --color-ink-soft: #474238;
+  --color-ink-muted: #645c50;
+  --color-ink-faint: #82796a;
+
+  --color-border: #dcd3c4;
+  --color-border-faint: rgba(32, 30, 29, 0.1);
+  --color-separator: #c0b6a5;
+
+  --color-accent: #c67139;
+  --color-accent-hover: #b2622d;
+  --color-accent-dark: #8c491a;
+  --color-accent-light: #f6a06b;
+  --color-accent-soft: #ffe1d0;
+  --color-accent-soft-ink: #402310;
+  --color-on-accent: #fff2eb;
+
+  --color-sage: #56633f;
+  --color-sage-dark: #3d472b;
+  --color-sage-mid: #7a8a5e;
+  --color-mint: #e1eecc;
+  --color-mint-surface: #f0fae1;
+  --color-mint-on-dark: #ccdbb2;
+  --color-forest: #272e1b;
+
+  --color-medium: #dcd3c4;
+  --color-medium-ink: #474238;
+
+  /* Tipografia */
+  --font-display: "Caprasimo", ui-serif, Georgia, serif;
+  --font-body:
+    "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Raggi */
+  --radius-pill: 999px;
+  --radius-card: 28px;
+  --radius-soft: 16px;
+
+  /* Ombre */
+  --shadow-soft: 0 1px 2px rgba(46, 43, 37, 0.14);
+  --shadow-raised: 0 3px 10px rgba(46, 43, 37, 0.16);
+  --shadow-lifted: 0 12px 32px rgba(46, 43, 37, 0.22);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+}
+
+/* text-wrap: balance/pretty come nel prototipo, con fallback sicuro */
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}

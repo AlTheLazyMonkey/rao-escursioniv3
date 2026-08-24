@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="RAO">
+  <!-- Placeholder: sostituire con il logo reale del cliente (assets/logo-icon.png nel bundle di design). -->
+  <circle cx="32" cy="32" r="32" fill="#ebddc5"/>
+  <path d="M8 42 L24 20 L33 32 L40 22 L56 42 Z" fill="#56633f"/>
+  <circle cx="43" cy="18" r="5" fill="#c67139"/>
+</svg>
