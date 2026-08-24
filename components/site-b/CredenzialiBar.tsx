@@ -10,7 +10,7 @@ const CELLE = [
  */
 export function CredenzialiBar() {
   return (
-    <div className="relative z-10 px-5 sm:px-8 lg:px-14">
+    <div className="relative z-10 px-5 pb-10 sm:px-8 lg:px-14 lg:pb-14">
       <div className="-mt-10 grid grid-cols-3 divide-x divide-border rounded-card bg-surface-soft shadow-lifted sm:-mt-12 lg:-mt-[52px]">
         {CELLE.map((c) => (
           <div key={c.valore} className="px-3 py-6 text-center sm:px-6 sm:py-8">
