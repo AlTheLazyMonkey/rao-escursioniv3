@@ -1,4 +1,5 @@
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import Image from "next/image";
 
 const CREDENZIALI = [
   "Guida ambientale escursionistica",
@@ -16,8 +17,15 @@ export function BioSectionB() {
       id="mi-presento"
       className="grid gap-0 bg-surface sm:grid-cols-1 lg:grid-cols-[.85fr_1.15fr] lg:items-stretch scroll-mt-20"
     >
-      <div className="h-[280px] sm:h-[380px] lg:h-auto lg:min-h-[520px]">
-        <ImagePlaceholder label="ritratto della guida sul sentiero, formato verticale" radius={0} />
+      <div className="relative h-[280px] sm:h-[380px] lg:h-auto lg:min-h-[520px]">
+        <Image
+            src="https://www.dropbox.com/scl/fi/gbinur71o0s4go8x8yye3/Andrea.jpg?rlkey=j1oelvxk7uwkbuvqm4egtaumu&st=72d2iq3m&raw=1"
+            alt="Andrea Favret, guida del Parco Dolomiti Friulane"
+            fill
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            className="object-cover"
+            priority
+          />
       </div>
       <div className="px-5 py-12 sm:px-8 sm:py-14 lg:px-14 lg:py-16">
         <span className="text-[13px] font-bold uppercase tracking-[0.16em] text-ink-faint">
