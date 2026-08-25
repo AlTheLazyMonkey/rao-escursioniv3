@@ -1,5 +1,7 @@
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { PillLink } from "@/components/ui/Pill";
+import Image from "next/image";
+
 
 export function Hero() {
   return (
@@ -27,10 +29,13 @@ export function Hero() {
       </div>
 
       <div className="relative h-[320px] sm:h-[420px] lg:h-[520px]">
-        <ImagePlaceholder
-          label="foto di copertina — cresta all'alba, formato verticale"
-          radius={28}
-          className="saturate-90 contrast-95"
+        <Image
+          src="https://images.unsplash.com/photo-1606909297337-be76ed45039e?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="RAO"
+          width={1674}
+          height={1116}
+          className="absolute inset-0 h-full w-full rounded-[28px] object-cover"
+          priority
         />
         <div className="absolute -left-3 bottom-6 hidden h-[120px] w-[120px] flex-col items-center justify-center rounded-full bg-surface text-center shadow-raised md:flex md:-left-11 md:bottom-11 md:h-[150px] md:w-[150px]">
           <span className="font-display text-2xl text-accent-dark sm:text-[34px]">18</span>

@@ -1,6 +1,7 @@
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { PillLink } from "@/components/ui/Pill";
 import { HeaderB } from "./HeaderB";
+import Image from "next/image";
 
 export function HeroB() {
   return (
@@ -13,6 +14,14 @@ export function HeroB() {
           radius={0}
           className="brightness-[.82] contrast-[1.02] saturate-[.85]"
         />
+         <Image
+            src="https://images.unsplash.com/photo-1606909297337-be76ed45039e?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="RAO"
+            width={1674}
+            height={1116}
+            className="absolute inset-0 h-full w-full rounded-[28px] object-cover"
+            priority
+          />
       </div>
       <div
         className="pointer-events-none absolute inset-0"
