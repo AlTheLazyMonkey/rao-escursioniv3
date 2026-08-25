@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { DifficoltaChip } from "@/components/ui/DifficoltaChip";
 import { PillButton } from "@/components/ui/Pill";
@@ -69,11 +70,21 @@ export function ExcursionModal({
           </div>
         ) : (
           <>
-            <div className="h-56 sm:h-72">
-              <ImagePlaceholder
-                label={`foto di copertina — ${e.titolo}`}
-                className="rounded-t-card rounded-b-none"
-              />
+            <div className="relative h-56 sm:h-72">
+              {e.foto ? (
+                <Image
+                  src={e.foto}
+                  alt={e.titolo}
+                  fill
+                  sizes="(min-width: 640px) 672px, 100vw"
+                  className="rounded-t-card object-cover"
+                />
+              ) : (
+                <ImagePlaceholder
+                  label={`foto di copertina — ${e.titolo}`}
+                  className="rounded-t-card rounded-b-none"
+                />
+              )}
             </div>
 
             <div className="p-6 sm:p-9">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { DifficoltaChip } from "@/components/ui/DifficoltaChip";
 import { dataBreveFmt, oraFmt, prezzoFmt, troncaTesto } from "@/lib/format";
@@ -18,7 +19,17 @@ export function ExcursionCard({ escursione: e }: { escursione: EscursioneConDisp
       className="group flex flex-col overflow-hidden rounded-card bg-surface text-left shadow-soft transition-shadow duration-150 hover:shadow-lifted"
     >
       <div className="relative h-[190px] shrink-0">
-        <ImagePlaceholder label={e.titolo} className="rounded-none" />
+        {e.foto ? (
+          <Image
+            src={e.foto}
+            alt={e.titolo}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <ImagePlaceholder label={e.titolo} className="rounded-none" />
+        )}
         <span className="absolute left-4 top-4 rounded-pill bg-page px-3.5 py-1.5 text-sm font-bold text-ink shadow-soft">
           {dataBreveFmt(e.data_ora)} · {oraFmt(e.data_ora)}
         </span>
