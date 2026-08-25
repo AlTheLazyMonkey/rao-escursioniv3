@@ -13,10 +13,17 @@ export function ExcursionCard({ escursione: e }: { escursione: EscursioneConDisp
   const descrizioneBreve = e.descrizione_breve || troncaTesto(e.descrizione, 110);
 
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       onClick={() => apriModalEscursione(e.id, "dettaglio")}
-      className="group flex flex-col overflow-hidden rounded-card bg-surface text-left shadow-soft transition-shadow duration-150 hover:shadow-lifted"
+      onKeyDown={(ev) => {
+        if (ev.key === "Enter" || ev.key === " ") {
+          ev.preventDefault();
+          apriModalEscursione(e.id, "dettaglio");
+        }
+      }}
+      className="group flex cursor-pointer flex-col overflow-hidden rounded-card bg-surface text-left shadow-soft transition-shadow duration-150 hover:shadow-lifted"
     >
       <div className="relative h-[190px] shrink-0">
         {e.foto ? (
@@ -57,6 +64,6 @@ export function ExcursionCard({ escursione: e }: { escursione: EscursioneConDisp
           </PrenotaButton>
         </div>
       </div>
-    </button>
+    </div>
   );
 }
